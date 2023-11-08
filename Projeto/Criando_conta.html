@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCI - Criando conta</title>
+    <link rel="stylesheet" type="text/css" href="../css/Info.css">
+</head>
+
+<body>
+    <header>
+        <a href="Principal.html">
+            <img src="../img/Titulo.png" width="100">
+        </a>
+    </header>
+
+    <main class="centrar_criarconta">
+        <div class="elemento-com-borda">
+            <form action="../Principal.html" method="post">
+                <p>
+                   <label for="nome">Nome: </label>
+                   <input type="text" name="nome" id="nome" placeholder="Nome" required>
+                </p>
+   
+               <p>
+                   <label for="email">Email: </label>
+                   <input type="email" name="email" id="email" placeholder="Email" required>
+               </p>
+   
+               <p>
+                   <label for="confirmarEmail">Confirmar Email: </label>
+                   <input type="email" name="confirmarEmail" id="confirmarEmail" placeholder="Confirmar Email" required>
+               </p>
+   
+               <p>
+                   <label class="tooltip" for="senha">
+                       <span class="tooltiptext">O Formato da senha deve conter 4 letras e 4 números.</span>
+                       Senha:
+                   </label>
+                   <input type="password" name="senha" id="senha" placeholder="Senha" required
+                       pattern="^(?=(?:\D*\d){4})(?=(?:[^\d]*\d){4})[A-Za-z\d]{8}">
+               </p>
+   
+               <p>
+                   <label for="confirmarSenha">Confirmar Senha:</label>
+                   <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="Confirmar Senha" required>
+               </p>
+   
+               <p>
+                   <label for="telefone">Telefone: </label>
+                   <input type="pho" name="telefone" id="telefone" placeholder="(99) 99999-9999" pattern="\(\d{2}\) \d{4,5}-\d{4}" required>
+               </p>
+   
+               <p>
+                   <label for="sexo">Sexo: </label>
+                   <input type="radio" name="sexo" id="masculino">
+                   <label for="masculino">Masculino</label>
+                   <input type="radio" name="sexo" id="feminino">
+                   <label for="feminino">Feminino</label>
+                   <input type="radio" name="sexo" id="outros">
+                   <label for="outros">Outros</label>
+               </p>
+   
+               <p>
+                   <label for="idade">Data de nascimento: </label>
+                   <input type="date" name="idade" id="idade">
+               </p>
+
+                <div class="button-container">
+                    <input type="submit" value="Enviar" class="button" onmouseover="aumentarBotao(this)" onmouseout="reduzirBotao(this)">
+                    <input type="reset" value="Limpar" class="button" onmouseover="aumentarBotao(this)" onmouseout="reduzirBotao(this)">
+                </div>
+
+           </form>
+        </div>
+    </main>
+
+    <script>
+        function aumentarBotao(botao) {
+            botao.style.transform = "scale(1.1)";
+        }
+
+        function reduzirBotao(botao) {
+            botao.style.transform = "scale(1.0)";
+        }
+
+        document.querySelector("form").addEventListener("submit", function(event) {
+            const senha = document.getElementById("senha").value;
+            const confirmarSenha = document.getElementById("confirmarSenha").value;
+
+            if (senha !== confirmarSenha) {
+                alert("As senhas não coincidem. Por favor, confirme sua senha.");
+                event.preventDefault();
+            }
+
+            const email = document.getElementById("email").value;
+            const confirmarEmail = document.getElementById("confirmarEmail").value;
+
+            if (email !== confirmarEmail) {
+                alert("Os emails não coincidem. Por favor, confirme seu email.");
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>

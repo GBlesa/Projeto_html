@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCI - Login</title>
+    <link rel="stylesheet" type="text/css" href="../css/Info.css">
+</head>
+
+<body>
+    <header>
+        <a href="Principal.html">
+            <img src="../img/Titulo.png" width="100">
+        </a>
+    </header>
+    
+    <main class="centrar_criarconta">
+        <div class="elemento-com-borda">
+            <form action="servidor.php" method="post">
+                <input type="email" name="login" id="login" placeholder="Login" required><br /><br />
+                <input type="password" name="senha" id="senha" placeholder="Senha" required><br /><br />
+                <div class="button-container">
+                    <input type="submit" class="button" value="Enviar">
+                    <div class="button" id="criarContaButton">Criar Conta</div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        const buttons = document.querySelectorAll(".button");
+
+
+        function aumentarTamanho() {
+            this.style.transform = "scale(1.1)";
+        }
+
+        function restaurarTamanho() {
+            this.style.transform = "scale(1)";
+        }
+
+        buttons.forEach((button) => {
+            button.addEventListener("mouseenter", aumentarTamanho);
+            button.addEventListener("mouseleave", restaurarTamanho);
+        });
+
+        const criarContaButton = document.getElementById("criarContaButton");
+        criarContaButton.addEventListener("click", function () {
+            window.location.href = "Criando_conta.html";
+        });
+    </script>
+</body>
+
+</html>

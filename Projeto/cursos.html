@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCI - Faculdade de Ciências Inteligentes</title>
+    <link rel="stylesheet" type="text/css" href="../css/Info.css">
+</head>
+    <body>
+
+        <header>
+            <a href="Principal.html">
+                <img src="../img/Titulo.png" width="100">
+            </a>
+        </header>
+        
+    <main class="container">
+        <figure class="grid">
+            <div class="image-box" onmouseover="growImageBox(this)" onmouseout="shrinkImageBox(this)">
+                <a href="cursos/ciencias_contaveis.html">
+                    <img src="../img/001curso1.jpg" alt="Imagem 1" >
+                </a>
+            </div>
+
+            <div class="image-box" onmouseover="growImageBox(this)" onmouseout="shrinkImageBox(this)">
+                <a href="cursos/ads.html">
+                    <img src="../img/002curso2.png" alt="Imagem 2">
+                </a>
+            </div>
+
+            <div class="image-box" onmouseover="growImageBox(this)" onmouseout="shrinkImageBox(this)">
+                <a href="cursos/sistema_da_informaçao.html">
+                    <img src="../img/CRUSO_DE_SI.png" alt="Imagem 3">
+                </a>
+            </div>
+
+            <div class="image-box" onmouseover="growImageBox(this)" onmouseout="shrinkImageBox(this)">
+                <a href="cursos/ciencia_da_computaçao.html">
+                    <img src="../img/CURSO_CIENCIA_DA_COMPUTACAO.jpg" alt="Imagem 4">
+                </a>
+            </div>
+
+            <div class="image-box" onmouseover="growImageBox(this)" onmouseout="shrinkImageBox(this)">
+                <a href="cursos/engenharia_de_software.html">
+                    <img src="../img/CURSO_ENGENHARIA_DE_SOFTWARE.png" alt="Imagem 5">
+                </a>
+            </div>
+        </figure>
+
+    </main>
+
+        <script>
+        function growImageBox(imageBox) {
+            imageBox.style.transform = 'scale(1.1)';
+        }
+
+        function shrinkImageBox(imageBox) {
+            imageBox.style.transform = 'scale(1)';
+        }
+
+    </script>
+
+    </body>
+    
